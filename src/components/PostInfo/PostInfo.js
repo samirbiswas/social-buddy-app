@@ -6,12 +6,11 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import './PostInfo.css';
+
 
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
-    
     margin: 'auto',
     width:'50%',
     marginTop:20,

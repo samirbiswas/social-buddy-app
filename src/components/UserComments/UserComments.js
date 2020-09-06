@@ -4,13 +4,14 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
+
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
     margin: 'auto',
     width:'50%',
     marginTop:5,
-    border:'1px solid blue'
+    border:'1px solid blue',
     
   },
  
@@ -18,21 +19,31 @@ const useStyles = makeStyles({
     fontSize: 15,
     color:'dodgerblue'
   },
-
+  
   title2:{
     fontSize: 15,
     
+  },
+  img:{
+    height: 80,
+    width: 80,
+    borderRadius: '50%'
   },
   pos: {
     marginBottom: 10,
   },
 });
 const UserComments = (props) => {
-    const {name,body,email} = props.comments;
+    const {name,body,email} = props.comment;
+    const {img} =props.author;
+
     const classes = useStyles();
     return (
         <Card className={classes.root}>
         <CardContent>
+        <Typography className={classes.title} color="textSecondary" gutterBottom>
+              <img className={classes.img} src={img} alt=""/> 
+                </Typography>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
                         Name : {name}
                 </Typography>
