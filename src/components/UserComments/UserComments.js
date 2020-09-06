@@ -1,14 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
 
+const useStyles = makeStyles({
+  root: {
+    minWidth: 275,
+    margin: 'auto',
+    width:'50%',
+    marginTop:20,
+    
+  },
+ 
+  title: {
+    fontSize: 15,
+    color:'dodgerblue'
+  },
+
+  title2:{
+    fontSize: 15,
+    
+  },
+  pos: {
+    marginBottom: 10,
+  },
+});
 const UserComments = (props) => {
-    const {email,name,body} = props.comments;
+    const {name,body,email} = props.comments;
+    const classes = useStyles();
     return (
-        <div>
+        <Card className={classes.root}>
+        <CardContent>
+        <Typography className={classes.title} color="textSecondary" gutterBottom>
+                        Name : {name}
+                </Typography>
+                <Typography className={classes.title} color="textSecondary" gutterBottom>
+                        Email : {email}
+                </Typography>
+                <Typography variant="body2" component="p" className={classes.title2}>
+                        Comments: {body} 
+                </Typography>
+        </CardContent>
             
-            <h6>Name :{name}</h6>
-            <h5> Email:{email}</h5>
-            <p>{body}</p>
-        </div>
+    </Card>
     );
 };
 
